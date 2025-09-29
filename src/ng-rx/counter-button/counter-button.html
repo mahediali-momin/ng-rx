@@ -1,0 +1,9 @@
+<div>
+    <button class="btn mx-3 btn-primary" (click)="increment()">Increment</button>
+    <button class="btn mx-3 btn-secondary" (click)="decrement()">Decrement</button>
+    <button class="btn mx-3 btn-danger" (click)="reset()">Reset</button>
+</div>
+<div class="d-flex justify-content-center mt-3">
+    <input type="text" placeholder="Enter value" [(ngModel)]="counterInput" />
+    <button class="btn mx-3 btn-danger" (click)="addValue()">Add</button>
+</div>
