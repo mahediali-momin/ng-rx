@@ -37,6 +37,6 @@ const _counterReducer = createReducer(initialCounterState,
 
 
 
-export function counterReducer(state: CounterState, action: Action<string>) {
+export function counterReducer(state: CounterState, action: Action<string>): CounterState {
     return _counterReducer(state, action);
 }

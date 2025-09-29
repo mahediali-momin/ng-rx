@@ -1,7 +1,7 @@
 import { Component, Input, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CounterState } from '../counter.state';
-import { getCounter } from '../counter.selectors';
+import { CounterState } from '../../../public/store/counter/counter.state';
+import { getCounter } from '../../../public/store/counter/counter.selectors';
 
 @Component({
   selector: 'app-counter-output',

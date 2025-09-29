@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, input, Output, output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { addValue, decrement, increment, reset, setName } from '../counter.action';
-import { CounterState } from '../counter.state';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { getName } from '../counter.selectors';
+import { CounterState } from '../../../public/store/counter/counter.state';
+import { addValue, decrement, increment, reset, setName } from '../../../public/store/counter/counter.action';
+import { getName } from '../../../public/store/counter/counter.selectors';
 
 @Component({
   selector: 'app-counter-button',
