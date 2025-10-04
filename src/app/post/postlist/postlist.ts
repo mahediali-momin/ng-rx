@@ -21,14 +21,12 @@ export class Postlist {
     private store: Store<AppStore>
   ) {
     this.store.select(getPosts).subscribe((posts) => {
-      console.log('posts', posts);
       this.posts = posts
     })
   }
 
 
   deletePost(post: any) {
-    console.log('delete post', post);
     this.store.dispatch(deletePost(post));
   }
 }

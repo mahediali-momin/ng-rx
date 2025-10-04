@@ -37,7 +37,6 @@ export class Postadd implements OnInit {
       if (res?.id) {
         this.isEditing = true
         this.store.select(getPostById, { id: res.id }).subscribe((post) => {
-          console.log('post', post);
           this.addForm.patchValue(post)
         });
 
@@ -54,20 +53,17 @@ export class Postadd implements OnInit {
 
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       const forms = document.querySelectorAll('.needs-validation')
-      console.log(forms);
 
       // Loop over them and prevent submission
       Array.from(forms).forEach((form: any) => {
         form.addEventListener('submit', (event: any) => {
 
-          console.log(form.checkValidity());
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
           }
 
           this.form = form
-          console.log(this.form);
 
           form.classList.add('was-validated')
         }, false)
@@ -77,7 +73,6 @@ export class Postadd implements OnInit {
 
   onSubmit() {
     if (this.addForm.valid) {
-      console.log('submit', this.isEditing);
 
       if (this.isEditing) {
         this.store.dispatch(editPost(this.addForm.value));
@@ -86,7 +81,11 @@ export class Postadd implements OnInit {
       }
 
 
-      this.location.back();
+      this.cancel();
     }
+  }
+
+  cancel() {
+    this.location.back();
   }
 }

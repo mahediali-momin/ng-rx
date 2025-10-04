@@ -19,8 +19,6 @@ const _postReducer = createReducer(initialPostState,
             if (post.id == action.post.id) return action.post;
             else return post;
         });
-        console.log(updatedPosts);
-
         return { ...state, posts: updatedPosts };
     }),
     on(deletePost, (state, action: any) => {

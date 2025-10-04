@@ -21,7 +21,6 @@ export class CounterButton {
     /* approach 1 */
     // this.store.select('counter').subscribe((state) => {
     //   this.name = state.name
-    //   console.log('name update');
 
     // })
 
@@ -29,7 +28,6 @@ export class CounterButton {
     /* approach 2 */
     this.store.select(getName).subscribe((name) => {
       this.name = name
-      console.log('name update');
     })
   }
 

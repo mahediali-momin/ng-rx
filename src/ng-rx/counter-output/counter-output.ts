@@ -19,7 +19,6 @@ export class CounterOutput {
 
     /* approach 1 */
     // this.counter = this.store.selectSignal(state => {
-    //   console.log('counter update');
     //   return state.counter.counter
     // });
 
@@ -30,7 +29,6 @@ export class CounterOutput {
       /* we can write as below line too */
       // this.store.select(state => state.counter.counter).subscribe((count) => {
       this.counter = count
-      console.log('count update');
     })
   }
 }
