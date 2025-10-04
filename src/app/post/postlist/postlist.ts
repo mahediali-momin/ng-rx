@@ -4,10 +4,12 @@ import { AppStore } from '../../../../public/store/app.store';
 import { getPosts } from '../../../../public/store/post/post.selectors';
 import { CommonModule } from '@angular/common';
 import { Post } from '../../../../public/models/posts';
+import { RouterModule } from '@angular/router';
+import { deletePost } from '../../../../public/store/post/poss.action';
 
 @Component({
   selector: 'app-postlist',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './postlist.html',
   styleUrl: './postlist.css'
 })
@@ -24,4 +26,9 @@ export class Postlist {
     })
   }
 
+
+  deletePost(post: any) {
+    console.log('delete post', post);
+    this.store.dispatch(deletePost(post));
+  }
 }

@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ng-rx');
+  protected readonly title = signal('Ng-Rx');
 }

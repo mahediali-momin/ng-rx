@@ -1,5 +1,49 @@
-<div class="row" *ngFor="let obj of posts">
-    <div class="col-md-3">{{ obj.id }}</div>
-    <div class="col-md-3">{{ obj.title }}</div>
-    <div class="col-md-3">{{ obj.description }}</div>
+<div class="row">
+    <div class="col-md-6">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Posts</a>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-danger" type="button" [routerLink]="['add']">+ Add</button>
+                </form>
+            </div>
+        </nav>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (obj of posts ;track obj.id){
+
+                <tr>
+                    <th scope="row">{{obj.id}}</th>
+                    <td>{{ obj.title }}</td>
+                    <td>{{ obj.description }}</td>
+                    <td>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle0" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                ...
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" [routerLink]="['edit', obj.id]">Edit</a></li>
+                                <li><a class="dropdown-item" (click)="deletePost(obj)">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-6">
+        <router-outlet class="container"></router-outlet>
+    </div>
 </div>
