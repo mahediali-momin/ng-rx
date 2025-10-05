@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Counter } from '../non-ng-rx/counter/counter';
-import { Counter as ngrxCounter } from '../ng-rx/counter/counter';
 import { provideState } from '@ngrx/store';
 import { counterReducer } from '../../public/store/counter/counter.reducer';
+import { Counter as ngrxCounter } from './ng-rx/counter/counter';
+import { Counter } from './non-ng-rx/counter/counter';
 
 export const routes: Routes = [
     {

@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { postState } from '../../../../public/store/post/post.state';
-import { addPost, editPost } from '../../../../public/store/post/poss.action';
+import { addPost, editPost } from '../../../../public/store/post/post.action';
 import { getPostById } from '../../../../public/store/post/post.selectors';
 
 @Component({

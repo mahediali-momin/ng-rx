@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CounterState } from '../../../public/store/counter/counter.state';
-import { addValue, decrement, increment, reset, setName } from '../../../public/store/counter/counter.action';
-import { getName } from '../../../public/store/counter/counter.selectors';
+import { increment, decrement, reset, addValue, setName } from '../../../../public/store/counter/counter.action';
+import { CounterState } from '../../../../public/store/counter/counter.state';
+import { getName } from '../../../../public/store/counter/counter.selectors';
 
 @Component({
   selector: 'app-counter-button',

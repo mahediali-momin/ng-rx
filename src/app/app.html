@@ -21,5 +21,7 @@
     </div>
   </div>
 </nav>
-
+@if (loader$()) {
+<app-loader></app-loader>
+}
 <router-outlet></router-outlet>
